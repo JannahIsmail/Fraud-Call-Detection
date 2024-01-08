@@ -1,6 +1,5 @@
 import nltk
 import streamlit as st
-import toml
 nltk.download('punkt')
 nltk.download('stopwords')
 
@@ -18,9 +17,7 @@ from wordcloud import WordCloud
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk import FreqDist, bigrams
-from bs4 import BeautifulSoup
 import pandas as pd
-import seaborn as sns
 import matplotlib.pyplot as plt
 import numpy as np
 import string
@@ -50,9 +47,6 @@ X_train_resampled, y_train_resampled = smote.fit_resample(X_train, y_train)
 scaler = StandardScaler(with_mean=False)  # Disable centering for sparse matrices
 X_train_resampled_scaled = scaler.fit_transform(X_train_resampled)
 X_test_scaled = scaler.transform(X_test)
-
-# Create a DataFrame from the resampled data
-resampled_df = pd.DataFrame(data={'Contents': X_train_resampled, 'Type': y_train_resampled})
 
 # Create a CountVectorizer with n-grams
 ngram_vectorizer = CountVectorizer(ngram_range=(1, 2), stop_words='english')
@@ -90,8 +84,6 @@ bigram_freq = {}
 for bigram in fraud_bigrams:
     bigram_str = ' '.join(bigram)
     bigram_freq[bigram_str] = bigram_freq.get(bigram_str, 0) + 1
-
-import streamlit as st
 
 model = RandomForestClassifier(max_depth=None, min_samples_split=10, n_estimators=50, random_state=0)
 model.fit(X_train_resampled_scaled, y_train_resampled)
