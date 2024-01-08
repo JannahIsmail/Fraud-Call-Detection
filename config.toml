@@ -1,0 +1,10 @@
+[theme]
+page_title = "Fraud Detection App"
+page_icon = "🕵️"
+layout = "tufte"
+initial_sidebar_state = "collapsed"
+primaryColor = "#AFC8AD"
+backgroundColor = "#EEE7DA"
+secondaryBackgroundColor = "#C4D7B2"
+textColor = "#88AB8E"
+font = "sans-serif"
