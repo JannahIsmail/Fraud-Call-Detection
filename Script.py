@@ -23,18 +23,6 @@ import numpy as np
 import string
 import re
 
-# Set the Streamlit page configuration
-st.set_page_config(
-    page_title="Fraud Detection App",
-    page_icon="🕵️",
-    layout="tufte",
-    initial_sidebar_state="collapsed",
-    primaryColor="#AFC8AD",
-    backgroundColor="#EEE7DA",
-    secondaryBackgroundColor="#C4D7B2",
-    textColor="#88AB8E",
-    font="sans-serif"
-)
 
 # Read the CSV file into a DataFrame
 file_url = 'https://raw.githubusercontent.com/JannahIsmail/Fraud-Call-Detection/main/fraud%20call%20data.csv'
