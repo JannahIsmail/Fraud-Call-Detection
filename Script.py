@@ -126,7 +126,7 @@ def generate_fraud_calls_visualizations():
         fig2.patch.set_alpha(0.0)  
         st.pyplot(fig2)
 
-    with st.expander("WordCloud for Fraud Messages"):
+    with st.expander("WordCloud for Fraud Calls Words"):
         wc_fig, wc_ax = plt.subplots(figsize=(8, 4))
         wc = WordCloud(width=800, height=400, background_color=None, mode='RGBA', colormap='PiYG', random_state=42).generate(fraud_text)
         wc_ax.imshow(wc, interpolation='bilinear')
@@ -134,7 +134,7 @@ def generate_fraud_calls_visualizations():
         wc_fig.set_facecolor('none') 
         st.pyplot(wc_fig)
 
-    with st.expander("WordCloud for Bigrams"):
+    with st.expander("WordCloud for Fraud Calls Phrases"):
         wc_bigrams_fig, wc_bigrams_ax = plt.subplots(figsize=(8, 4))
         wc_bigrams = WordCloud(width=800, height=400, background_color=None, mode='RGBA', colormap='PiYG', random_state=42).generate_from_frequencies(bigram_freq)
         wc_bigrams_ax.imshow(wc_bigrams, interpolation='bilinear')
